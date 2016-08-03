@@ -1,6 +1,6 @@
 {
     "name" : "david-teruel/log-bundle",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description" : "Bundle to display and do some things with log files",
     "type" : "symfony-bundle",
     "authors" : [{
