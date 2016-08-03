@@ -1,5 +1,5 @@
 {
-    "name" : "DavidTeruel/LogBundle",
+    "name" : "david-teruel/log-bundle",
     "version": "1.0.0-alpha",
     "description" : "Bundle to display and do some things with log files",
     "type" : "symfony-bundle",
@@ -22,10 +22,10 @@
     },
     "autoload" : {
         "psr-0" : {
-            "DavidTeruel\\LogBundle" : ""
+            "david-teruel\\log-bundle" : ""
         }
     },
-    "target-dir" : "DavidTeruel/LogBundle",
+    "target-dir" : "david-teruel/log-bundle",
     "repositories" : [{
     }],
     "extra" : {
