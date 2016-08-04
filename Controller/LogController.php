@@ -9,14 +9,9 @@ use Symfony\Component\Finder\Finder;
 /**
  * Class LogController
  * @package DavidTeruel\LogBundle\Controller
- * @Route("/logs")
  */
 class LogController extends Controller
 {
-    /**
-     * @Route("/", name="logs_list_main")
-     * @Route("/list", name="logs_list")
-     */
     public function listAction()
     {
         $logsDir = $this->container->get('kernel')->getLogDir();
@@ -33,12 +28,6 @@ class LogController extends Controller
         ));
     }
 
-    /**
-     * @param $name
-     * @return \Symfony\Component\HttpFoundation\Response
-     *
-     * @Route("/show/{name}/{numberLines}", name="logs_show", defaults={"numberLines": 1})
-     */
     public function showFileAction($name, $numberLines = 1)
     {
         $logsDir = $this->container->get('kernel')->getLogDir();
@@ -60,9 +49,6 @@ class LogController extends Controller
         ));
     }
 
-    /**
-     * @Route("/show-params", name="logs_show_parameters")
-     */
     public function showParametersFileAction()
     {
         $parametersFile = '';

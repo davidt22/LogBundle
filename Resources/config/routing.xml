@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="logs_list_main" path="/">
+        <default key="_controller">LogBundle:Log:list</default>
+    </route>
+    <route id="logs_list" path="/list">
+        <default key="_controller">LogBundle:Log:list</default>
+    </route>
+    <route id="logs_show" path="/show/{name}/{numberLines}">
+        <default key="_controller">LogBundle:Log:showFile</default>
+    </route>
+    <route id="logs_show_parameters" path="/show-params">
+        <default key="_controller">LogBundle:Log:showParametersFile</default>
+    </route>
+</routes>
