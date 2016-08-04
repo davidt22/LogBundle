@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+    <h1>Logs</h1>
+
+    <ul>
+        {% for file in files %}
+            <li>
+                <span>{{ file.fileName }}</span>
+                [<a href="{{ url('logs_show', {'name': file.fileName, 'numberLines': 1 }) }}" target="_blank">1 line</a> -
+                <a href="{{ url('logs_show', {'name': file.fileName, 'numberLines': 10 }) }}" target="_blank">10 lines</a> -
+                <a href="{{ url('logs_show', {'name': file.fileName, 'numberLines': 100 }) }}" target="_blank">100 lines</a>]
+                {#<span><a href="">x</a></span>#}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
