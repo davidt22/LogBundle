@@ -1,7 +1,16 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <a href="{{ url('logs_list') }}" style="padding: 10px; border: 1px solid; background-color: #00a65a; display: inline-block">Volver al listado</a>
-    <br /><br /><br />
-    {{ file | nl2br }}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-5">
+                <a href="{{ url('logs_list') }}" class="text-center" style="padding: 10px; border: 1px solid; background-color: #a6a398; display: inline-block; text-decoration: none; margin: 20px 0;">Volver al listado</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                {{ file | nl2br }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

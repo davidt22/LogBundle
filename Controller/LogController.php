@@ -44,40 +44,19 @@ class LogController extends Controller
         $logsDir = $this->container->get('kernel')->getLogDir();
         $filePath = $logsDir.'/'.$name;
 
-        $reverse = true;
         $output = '';
-        if($reverse){
 
-            $lines = file($filePath);
-            if(count($lines) <= $numberLines){
-                $numberLines = count($lines);
-            }
-            for ($i = count($lines) - $numberLines; $i < count($lines); $i++) {
-               $output .= $lines[$i] . PHP_EOL;
-            }
-
-//            $fl = fopen($filePath, 'r');
-//            $limitCounter = 0;
-//
-//            for($x_pos = 0, $ln = 0, $output = array(); fseek($fl, $x_pos, SEEK_END) !== -1 && $limitCounter < $words; $x_pos--) {
-//                $char = fgetc($fl);
-//                if ($char === '\n') {
-//                    $ln++;
-//                    continue;
-//                }
-//                $output[$ln] = $char . ((array_key_exists($ln, $output)) ? $output[$ln] : '');
-//                $limitCounter += 1;
-//            }
-//            fclose($fl);
-//
-//            $output = implode(PHP_EOL, $output);
-        }else{
-            $output = file_get_contents($filePath);
+        $lines = file($filePath);
+        if(count($lines) <= $numberLines){
+            $numberLines = count($lines);
+        }
+        for ($i = count($lines) - $numberLines; $i < count($lines); $i++) {
+           $output .= $lines[$i] . PHP_EOL;
         }
 
+
         return $this->render('LogBundle:Log:showLog.html.twig', array(
-            'file' => $output,
-            'reverse' => $reverse
+            'file' => $output
         ));
     }
 
@@ -122,7 +101,7 @@ class LogController extends Controller
             }
         }
 
-        return $this->render('LogBundle:Default:showParameters.html.twig', array(
+        return $this->render('LogBundle:Log:showParameters.html.twig', array(
             'file' => $parametersFile
         ));
     }
